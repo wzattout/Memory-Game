@@ -79,13 +79,13 @@ function myFunction(e) {
     /* if it is the first click it save the clicked images in prev */
     if(flag===0){
         image1=event.target;
-        //event.target.removeEventListener('click',function(e){myFunction(e);});
+        event.target.removeEventListener('click',myFunction);
         flag=1;
     } 
     /*if it is the second click it compares the 2 images*/
     else{
         image2=event.target;
-        //event.target.removeEventListener('click',function(e){myFunction(e);});
+        event.target.removeEventListener('click',myFunction);
         flag=2;
     }
 }
@@ -93,19 +93,19 @@ function myFunction(e) {
 
 /* add event listener for all images in the document*/
 for(var j = 0; j < 36; j++) {
-    all[j].addEventListener('click',function(e){myFunction(e);});
+    all[j].addEventListener('click',myFunction);
 }
 
-var intervalID = window.setInterval(myCallback, 100);
+var intervalID = window.setInterval(myCallback, 10);
 
 function myCallback() {
     if(flag===2){
         if(image1.src!=image2.src){
-            wait(2000);
+            wait(1000);
             image1.src='images/cardback.jpg';
             image2.src='images/cardback.jpg';
-            //image1.addEventListener('click',function(e){myFunction(e);});
-            //image2.addEventListener('click',function(e){myFunction(e);});
+            image1.addEventListener('click',myFunction);
+            image2.addEventListener('click',myFunction);
         }
         flag=0;
     }
