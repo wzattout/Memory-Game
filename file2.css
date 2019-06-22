@@ -1,0 +1,21 @@
+#header{
+    color: forestgreen;
+    text-align: center;
+}
+body{
+    background-color: antiquewhite;
+    background-image: url(images/background.jpg);
+}
+.backCard{
+    height: 90px;
+    width: auto;
+}
+
+.button{
+    width: 190px;
+    float: right;
+    height: 50px;
+    font-size: 140%;
+    color: blanchedalmond;
+    background-color:darkgreen;
+}
