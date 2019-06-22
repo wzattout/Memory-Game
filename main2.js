@@ -9,11 +9,46 @@ for(var i=0;i<36;i++) imageArray2[i]=new Image();
 
 /* I will put all my images in one array (imageArray)*/
                 /*we sould add 36 images here*/
-    for(var i=0;i<18;i++)
-        imageArray[i].src='images/me.jpg';
-    for(var i=0;i<18;i++)
-        imageArray[18+i].src='images/zattout.jpg';
+    
+    imageArray[0].src='images/image1.jpg';
+    imageArray[1].src='images/image2.jpg';
+    imageArray[2].src='images/image3.jpg';
+    imageArray[3].src='images/image4.jpg';
+    imageArray[4].src='images/image5.jpg';
+    imageArray[5].src='images/image6.jpg';
+    imageArray[6].src='images/image7.jpg';
+    imageArray[7].src='images/image8.jpg';
+    imageArray[8].src='images/image9.jpg';
+    imageArray[9].src='images/image10.jpg';
+    imageArray[10].src='images/image11.jpg';
+    imageArray[11].src='images/image12.jpg';
+    imageArray[12].src='images/image13.jpg';
+    imageArray[13].src='images/image14.jpg';
+    imageArray[14].src='images/image15.jpg';
+    imageArray[15].src='images/image16.jpg';
+    imageArray[16].src='images/image17.jpg';
+    imageArray[17].src='images/image18.jpg';
+    imageArray[18].src='images/image1.jpg';
+    imageArray[19].src='images/image2.jpg';
+    imageArray[20].src='images/image3.jpg';
+    imageArray[21].src='images/image4.jpg';
+    imageArray[22].src='images/image5.jpg';
+    imageArray[23].src='images/image6.jpg';
+    imageArray[24].src='images/image7.jpg';
+    imageArray[25].src='images/image8.jpg';
+    imageArray[26].src='images/image9.jpg';
+    imageArray[27].src='images/image10.jpg';
+    imageArray[28].src='images/image11.jpg';
+    imageArray[29].src='images/image12.jpg';
+    imageArray[30].src='images/image13.jpg';
+    imageArray[31].src='images/image14.jpg';
+    imageArray[32].src='images/image15.jpg';
+    imageArray[33].src='images/image16.jpg';
+    imageArray[34].src='images/image17.jpg';
+    imageArray[35].src='images/image18.jpg';
+
                 /*we sould add 36 images here*/
+    
 
 
 /* moving images to another array(imageArray2) in random order*/
@@ -67,8 +102,8 @@ function myCallback() {
     if(flag===2){
         if(image1.src!=image2.src){
             wait(2000);
-            image1.src='images/cardback1.jpg';
-            image2.src='images/cardback1.jpg';
+            image1.src='images/cardback.jpg';
+            image2.src='images/cardback.jpg';
             //image1.addEventListener('click',function(e){myFunction(e);});
             //image2.addEventListener('click',function(e){myFunction(e);});
         }
