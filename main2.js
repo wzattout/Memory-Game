@@ -34,34 +34,45 @@ function wait(ms){
 /*flag to keep track of is it the first or second image to click*/
 var flag=0;
 /*prev to save last image clicked */
-var prev;
+var image1,image2;
 /* myFunction1 just flip the clicked image*/
-function myFunction1(e) {
+function myFunction(e) {
     var i=0;
     while(event.target!=all[i]) {i++;}
     event.target.src=imageArray2[i].src;
-    console.log(event.target.src);
-}
-/* myFunction2 have 2 options */
-function myFunction2(e){
+    console.log(flag);
     /* if it is the first click it save the clicked images in prev */
     if(flag===0){
-        prev=event.target;
+        image1=event.target;
+        //event.target.removeEventListener('click',function(e){myFunction(e);});
         flag=1;
     } 
     /*if it is the second click it compares the 2 images*/
     else{
-        if(prev.src!=event.target.src){
+        image2=event.target;
+        //event.target.removeEventListener('click',function(e){myFunction(e);});
+        flag=2;
+    }
+}
+
+
+/* add event listener for all images in the document*/
+for(var j = 0; j < 36; j++) {
+    all[j].addEventListener('click',function(e){myFunction(e);});
+}
+
+var intervalID = window.setInterval(myCallback, 100);
+
+function myCallback() {
+    if(flag===2){
+        if(image1.src!=image2.src){
             wait(2000);
-            prev.src='images/cardback1.jpg';
-            event.target.src='images/cardback1.jpg';
+            image1.src='images/cardback1.jpg';
+            image2.src='images/cardback1.jpg';
+            //image1.addEventListener('click',function(e){myFunction(e);});
+            //image2.addEventListener('click',function(e){myFunction(e);});
         }
         flag=0;
     }
 }
 
-/* add event listener for all images in the document*/
-for(var j = 0; j < 36; j++) {
-    all[j].addEventListener('click',function(e){myFunction1(e);});
-    all[j].addEventListener('click',function(e){myFunction2(e);});
-}
