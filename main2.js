@@ -96,7 +96,7 @@ for(var j = 0; j < 36; j++) {
     all[j].addEventListener('click',myFunction);
 }
 
-var intervalID = window.setInterval(myCallback, 10);
+var intervalID = window.setInterval(myCallback, 500);
 
 function myCallback() {
     if(flag===2){
