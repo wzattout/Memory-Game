@@ -13,7 +13,6 @@ body{
 
 .button{
     width: 190px;
-    float: right;
     height: 50px;
     font-size: 140%;
     color: blanchedalmond;
@@ -25,8 +24,10 @@ body{
     font-size: 50px
 }
 #time{
-
+    font-size: 30px;
+    color: indigo;  
 }
 #tries{
-    
+    font-size: 30px;
+    color: indigo;
 }
