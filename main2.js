@@ -2,6 +2,15 @@
 var all=document.querySelectorAll('.backCard');
 var restart=document.getElementById("restart");
 var solve=document.getElementById("solve");
+var time=document.getElementById("time");
+var tries=document.getElementById("tries");
+var congratulations=document.getElementById("congratulations");
+var seconds;
+var intervalTime;
+var numberTries;
+//save number of hidden pairs
+var endGame;
+
 var imageArray2;
 /*flag to keep track of is it the first or second image to click*/
 var flag=0;
@@ -12,6 +21,9 @@ preStart();
 
 
 function preStart(){
+    numberTries=0;
+    tries.innerHTML="number of tries "+numberTries;
+    resetTime();
     restart.innerHTML="Start";
     restart.removeEventListener('click',preStart);
     restart.addEventListener('click',start);
@@ -71,6 +83,8 @@ function preStart(){
             solve.removeEventListener('click',solveClick);
 }
 function start(e){
+    endGame=18;
+    startTime();
     solve.addEventListener('click',solveClick);
     restart.removeEventListener('click',start);
     restart.addEventListener('click',preStart);
@@ -130,12 +144,17 @@ var intervalID = window.setInterval(myCallback, 500);
 
 function myCallback() {
     if(flag===2){
+        numberTries++;
+        tries.innerHTML="number of tries "+numberTries;
         if(image1.src!=image2.src){
             wait(500);
             image1.src='images/cardback.jpg';
             image2.src='images/cardback.jpg';
             image1.addEventListener('click',myFunction);
             image2.addEventListener('click',myFunction);
+        }else{
+            endGame--;
+            if(endGame==0) GameOver();
         }
         flag=0;
     }
@@ -146,4 +165,23 @@ function solveClick(){
         all[i].removeEventListener('click',myFunction);
     }
     solve.removeEventListener('click',solveClick);
+    window.clearInterval(intervalTime);
+}
+function startTime(){
+    seconds=0;
+    intervalTime=window.setInterval(updateTime,1000);
+    function updateTime(){
+        seconds++;
+        time.innerHTML="Time "+Math.floor(seconds/60)+":"+seconds%60;
+        console.log(seconds);
+    }
+}
+function resetTime(){
+    window.clearInterval(intervalTime);
+    seconds=0;
+    time.innerHTML="Time "+0+":"+0;
+}
+function GameOver(){
+    window.clearInterval(intervalTime);
+    congratulations.innerHTML="congratulations";
 }
