@@ -36,7 +36,7 @@ function preStart() {
     startFlag=0;
     afterover();
     numberTries = 0;
-    tries.innerHTML = "Number of tries : " + numberTries;
+    tries.innerHTML = "Number of tries " + numberTries;
     resetTime();
     restart.innerHTML = "Start";
     restart.removeEventListener('click', preStart);
@@ -191,7 +191,7 @@ function startTime() {
         time.innerHTML = "Time " + leftZero(Math.floor(seconds / 60)) + ":" +leftZero( seconds % 60);
     }
 }
-//remove leading zeros
+//add leading zeros
 function leftZero(seconds){
     if(seconds<10){
         return "0"+seconds;
@@ -202,7 +202,7 @@ function leftZero(seconds){
 function resetTime() {
     window.clearInterval(intervalTime);
     seconds = 0;
-    time.innerHTML = "Time : " + "00" + ":" + "00";
+    time.innerHTML = "Time " + "00" + ":" + "00";
 }
 // GameOver stop time and change color when game done 
 function GameOver() {
