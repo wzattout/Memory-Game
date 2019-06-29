@@ -20,7 +20,7 @@ body{
 }
 #congratulations{
     text-align: center;
-    color:red;
+    color:green;
     font-size: 50px
 }
 #time{
@@ -30,4 +30,10 @@ body{
 #tries{
     font-size: 30px;
     color: indigo;
+}
+#finish{
+    text-align: center;
+    color:green;
+    font-size: 20px;
+    margin-top: -36px;
 }
